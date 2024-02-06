@@ -153,7 +153,7 @@ function ProfilePage() {
                   to={`/send-message/${slug}`}
                   style={{ fontSize: "0.9rem" }}
                 >
-                  test.ir/send-message/{slug}
+                  {location.origin}/send-message/{slug}
                 </Link>
               </Grid>
 
