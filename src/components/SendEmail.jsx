@@ -11,13 +11,15 @@ function SendEmail({ email, setEmail, setStep }) {
 
     if (!validateEmail(email)) {
       toast.error("ایمیل وارد شده نامعتبر است");
-
       return;
     }
 
     const { response, error } = await sendOtp(email);
 
-    if (response) setStep(2);
+    if (response) {
+      toast.success("کد اعتبار سنجی با موفقیت ارسال شد");
+      setStep(2);
+    }
 
     if (error) toast.error(error.message);
   };

@@ -21,10 +21,11 @@ function CheckCode({ email, code, setCode, setStep }) {
 
     if (response) {
       setCookie(response.data.accessToken);
+      toast.success("ورود به سایت");
       refetch();
       navigate("/panel");
     } else {
-      toast.error("کد تایید نادرست است");
+      toast.error("کد ارسال شده صحیح نمیباشد");
     }
   };
 
