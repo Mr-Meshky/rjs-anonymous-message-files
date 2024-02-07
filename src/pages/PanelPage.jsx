@@ -15,8 +15,8 @@ function PanelPage() {
   if (isLoading) return <Loader />;
 
   if (isError) return <MessageNotfound />;
-  
-  return <Messages messages={data.data} />;
+
+  return <Messages messages={data.data.reverse()} refetch={refetch} />;
 }
 
 export default PanelPage;
