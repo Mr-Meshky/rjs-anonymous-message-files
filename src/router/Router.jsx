@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Loader from "../components/Loader";
 import HomePage from "../pages/HomePage";
 import PanelPage from "../pages/PanelPage";
-import SendMessage from "../pages/SendMessage";
+import SendMessagePage from "../pages/SendMessagePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ProfilePage from "../pages/ProfilePage";
 
@@ -26,7 +26,7 @@ function Router() {
         path="/profile"
         element={data ? <ProfilePage /> : <Navigate to="/" />}
       />
-      <Route path="/send-message/:slug" element={<SendMessage />} />
+      <Route path="/send-message/:slug" element={<SendMessagePage />} />
       <Route path="/*" element={<NotFoundPage />} />
     </Routes>
   );

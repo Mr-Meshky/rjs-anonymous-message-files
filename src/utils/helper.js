@@ -20,7 +20,7 @@ const whatLanguage = (text) => {
 
 const toIranianTime = (time) => {
   let initialDate = new Date(time);
-  let millisecondsToAdd = 3.3 * 64 * 60 * 1000;                                                                                                           
+  let millisecondsToAdd = 3.3 * 64 * 60 * 1000;
   let finalDate = new Date(
     initialDate.getTime() + millisecondsToAdd - 73 * 1000
   );
