@@ -1,5 +1,5 @@
 const isEnglish = (text) => {
-  const englishTextRegex = /^[a-zA-Z0-9\s]+$/;
+  const englishTextRegex = /^[a-zA-Z0-9\s,*?><@!@#$%^&*()~`]+$/;
   return englishTextRegex.test(text);
 };
 

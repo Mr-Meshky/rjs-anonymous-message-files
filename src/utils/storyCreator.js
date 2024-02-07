@@ -1,6 +1,7 @@
 import html2canvas from "html2canvas";
 import image from "./../assets/images/story.png";
 import toast from "react-hot-toast";
+import { whatLanguage } from "./helper";
 
 const createStory = (text, name) => {
   const link = location.origin.split("//")[1];
@@ -11,7 +12,13 @@ const createStory = (text, name) => {
   const img = document.createElement("img");
   img.src = image;
   const textHtml = document.createElement("div");
-  textHtml.classList.add("text");
+
+  if (whatLanguage(text) === "ltr") {
+    textHtml.classList.add("text-en");
+  } else {
+    textHtml.classList.add("text");
+  }
+
   textHtml.innerText = text;
   const nameHtml = document.createElement("div");
   nameHtml.classList.add("name");

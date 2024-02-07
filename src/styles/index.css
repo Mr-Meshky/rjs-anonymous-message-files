@@ -42,7 +42,6 @@ code {
   position: relative;
   display: inline-block;
   left: -100%;
-  font-family: "Vazir", sans-serif;
 }
 
 .wrapper > img {
@@ -62,6 +61,22 @@ code {
   line-height: 2.5rem;
   font-weight: 500;
   text-align: right;
+  font-family: "Vazir", sans-serif;
+}
+
+.wrapper > .text-en {
+  position: absolute;
+  top: 755px;
+  right: 130px;
+  width: 75%;
+  padding: 0 10px;
+  color: white;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  text-align: left;
+  direction: ltr;
+  font-family: "Poppins", sans-serif;
 }
 
 .wrapper > .name {

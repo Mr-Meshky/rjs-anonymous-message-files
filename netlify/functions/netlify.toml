@@ -1,0 +1,23 @@
+[[redirects]]
+from = "/panel"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/profile"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/send-message/*"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/news/*"
+to = "/blog/:splat"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 404
