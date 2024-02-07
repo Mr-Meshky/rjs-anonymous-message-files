@@ -14,10 +14,6 @@ to = "/index.html"
 status = 200
 
 [[redirects]]
-from = "/news/*"
-to = "/blog/:splat"
-
-[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 404
