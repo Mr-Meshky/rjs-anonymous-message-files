@@ -17,7 +17,7 @@ function CheckCode({ email, code, setCode, setStep }) {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const { response, error } = await checkOtp(email, code);
+    const { response, error } = await checkOtp(email.toLowerCase(), code);
 
     if (response) {
       setCookie(response.data.accessToken);
