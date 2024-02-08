@@ -1,6 +1,7 @@
 import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 import Loader from "../components/Loader";
 
@@ -11,12 +12,17 @@ import SendMessageSucces from "../components/SendMessageSucces";
 function SendMessagePage() {
   const navigate = useNavigate();
   const { slug } = useParams();
+  const { data } = useQuery(["profile"]);
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (data.data.slug === slug) {
+      navigate("/profile");
+      return;
+    }
     getNameBySlug(slug)
       .then((res) => {
         setName(res.data.displayName);

@@ -48,6 +48,11 @@ function ProfilePage() {
     };
   }, [slug]);
 
+  const copySlugHandler = () => {
+    navigator.clipboard.writeText(`${location.origin}/send-message/${slug}`);
+    toast.success("لینک پیام ناشناس شما کپی شد");
+  };
+
   const logoutHandler = () => {
     deleteCookie();
     refetch();
@@ -149,12 +154,16 @@ function ProfilePage() {
                 />
               </Grid>
               <Grid item xs={12} textAlign="left">
-                <Link
-                  to={`/send-message/${slug}`}
-                  style={{ fontSize: "0.9rem" }}
+                <Typography
+                  variant="p"
+                  component="p"
+                  onClick={copySlugHandler}
+                  fontSize="0.9rem"
+                  color="Highlight"
+                  style={{ cursor: "pointer" }}
                 >
-                  {location.origin}/send-message/{slug}
-                </Link>
+                  {location.origin.split("//")[1]}/send-message/{slug}
+                </Typography>
               </Grid>
 
               <Grid

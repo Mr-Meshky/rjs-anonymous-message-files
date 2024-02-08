@@ -14,7 +14,7 @@ function SendEmail({ email, setEmail, setStep }) {
       return;
     }
 
-    const { response, error } = await sendOtp(email);
+    const { response, error } = await sendOtp(email.toLowerCase());
 
     if (response) {
       toast.success("کد اعتبار سنجی با موفقیت ارسال شد");

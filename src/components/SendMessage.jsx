@@ -16,11 +16,10 @@ function SendMessage({ slug, name, setStep }) {
     }
     sendMessage(text, slug)
       .then((res) => {
-        console.log(res);
         toast.success("پیام شما با موفقیت ارسال شد");
         setStep(2);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.err("مشکلی پیش آمد مجدد تلاش نمایید"));
   };
 
   return (
