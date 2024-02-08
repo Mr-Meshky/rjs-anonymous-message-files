@@ -4,12 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { Container, Grid, TextField, Typography, Button } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 
+import { useTitle } from "../hooks/useTitle";
+
 import { checkSlug, getProfile, updateProfile } from "../services/user";
 import { deleteCookie } from "../utils/cookie";
 import { slugValidation } from "../utils/validation";
 import { whatLanguage } from "../utils/helper";
 
 function ProfilePage() {
+  useTitle("پروفایل");
   const navigate = useNavigate();
   const { data, refetch } = useQuery(["profile"], getProfile);
 

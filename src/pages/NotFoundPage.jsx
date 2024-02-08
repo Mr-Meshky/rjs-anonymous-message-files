@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button, Grid, Typography } from "@mui/material";
 
+import { useTitle } from "../hooks/useTitle";
+
 import notFound from "./../assets/images/notfound.png";
 
 function NotFoundPage() {
+  useTitle("پیام ناشناس");
   return (
     <Grid
       container

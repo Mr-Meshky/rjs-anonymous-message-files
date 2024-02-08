@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import Loader from "../components/Loader";
 
+import { useTitle } from "../hooks/useTitle";
+
 import { getNameBySlug } from "../services/message";
 import SendMessage from "../components/SendMessage";
 import SendMessageSucces from "../components/SendMessageSucces";
@@ -16,10 +18,11 @@ function SendMessagePage() {
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
 
+  useTitle(`ارسال پیام به ${name}`);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (data.data.slug === slug) {
+    if (data?.data?.slug === slug) {
       navigate("/profile");
       return;
     }
